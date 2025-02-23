@@ -31,6 +31,7 @@ _start() {
 _stop() {
   mv /etc/tor/torrc.bak /etc/tor/torrc >/dev/null 2>&1
   iptables -t nat -F >/dev/null 2>&1
+  iptables -t nat -X >/dev/null 2>&1
   killall -HUP tor >/dev/null 2>&1
 }
 
